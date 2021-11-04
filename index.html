@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" />
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="box">
+            <h2 id="title">LOTUS LANE</h2>
+            <h3 id="artist_name">The Loyalist</h3>
+        <div class="image_box">
+            <img src="images/5.jpg">
+
+        </div>
+        <audio src="music/naresh-1.mp3"></audio>
+        <div class="music-controls">
+            <i class="fas fa-backward" id="prev" title="previous"></i>
+            <i class="fas fa-play main-button" id="play" title="play"></i>
+            <i class="fas fa-forward" id="next" title="next"></i>
+        </div>
+        </div>
+    </div>
+    <script>
+    let play = document.getElementById('play');
+    let img = document.querySelector('img');
+    let audio = document.querySelector('audio');
+    isplaying = false;
+    let playMusic = function(){
+        isplaying = true;
+        audio.play();
+        play.classList.replace("fa-play", "fa-pause");
+        img.classList.add("me");
+
+    };
+
+//pause
+     let pauseMusic = function(){
+        isplaying = false;
+        audio.pause();
+        play.classList.replace("fa-pause", "fa-play");
+        img.classList.remove("me");
+    
+    };
+
+    play.addEventListener("click", function(){
+        if(isplaying){
+            pauseMusic();
+        }
+        else{
+            playMusic();
+        }
+    });
+
+    </script>
+</body>
+</html>
